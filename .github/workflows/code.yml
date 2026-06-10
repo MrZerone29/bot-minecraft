@@ -1,0 +1,57 @@
+name: Create VPS
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [start-code]
+
+jobs:
+  start-vps:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: ⬇️ Checkout
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Download Cloudflared
+        run: |
+          wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 -O cloudflared 
+          chmod +x cloudflared
+
+      - name: 📤 Download Code Server
+        run: |
+          curl -fsSL https://code-server.dev/install.sh | sh
+          mkdir -p ~/.config/code-server
+
+          cat > ~/.config/code-server/config.yaml <<EOF
+          bind-addr: 0.0.0.0:8080
+          auth: none
+          cert: false
+          EOF
+
+      - name: Run Code Server
+        run: |
+          nohup code-server > code-server.log 2>&1 &
+          nohup cloudflared tunnel run --token eyJhIjoiZjJiZThjMDQ5ZGIyMTEyNzdlODc4YzkxNzJjODUyM2IiLCJ0IjoiZTJiODZiZGMtNDkyMC00MTM4LTg1NDQtOTU5NDk4MDA3YmZhIiwicyI6IlkyRXhaRFE1T0RFdE1tRTNNeTAwTm1Ga0xXSXdOelV0TWpjd01UUm1PRFF3WXprMiJ9 > cloudflared.log 2>&1 &
+
+      - name: ⏳ Keep VPS alive
+        run: |
+          for i in $(seq 1 $((180))); do
+            echo "🟢 Running minute $i/180..."
+            sleep 60
+          done
+
+      - name: 💾 Commit & Push toàn bộ thay đổi
+        if: always()   # luôn commit ngay cả khi job fail
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+
+          git add -A
+          git commit -m "⚡ Auto backup runner files at $(date)" || echo "No changes to commit"
+
+          git push origin HEAD:${GITHUB_REF##*/}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

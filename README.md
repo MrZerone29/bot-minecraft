@@ -60,7 +60,7 @@ node index.js
 
 **Cách 3: Chạy bằng file `start.bat` (Windows)**
 
-1. Dùng file start.bat đi kèm hoặc tạo file `start.bat` trong thư mục bot với nội dung sau: 
+1. Tạo file `start.bat` trong thư mục bot với nội dung sau:
 
 ```bat
 @echo off
@@ -118,3 +118,21 @@ kingmc-afk-bot/
 | ---------------- | ----------------------------------- |
 | `mineflayer`     | Thư viện tạo Minecraft bot          |
 | `mineflayer-gui` | Plugin tương tác với GUI trong game |
+
+---
+
+## 🚧 Tính năng đang phát triển
+
+Chức năng **sử dụng Proxy** hiện đang trong quá trình phát triển và chưa ổn định. Tính năng này có thể gây lỗi hoặc hoạt động không như mong đợi. Vui lòng chờ các bản cập nhật tiếp theo.
+
+---
+
+## ❤️ Donate
+
+Nếu bot hữu ích với bạn, hãy ủng hộ mình trong **KingSMP** bằng lệnh:
+
+```
+/pay Mr_Zerone <số tiền>
+```
+
+Cảm ơn bạn rất nhiều! 💙

@@ -1,6 +1,7 @@
 # KingMC AFK Bot
 
 Bot tự động AFK cho server Minecraft KingMC (`kingmc.vn`), tự đăng nhập, mở menu và đứng yên tại AFK zone.
+Bot tự tham gia vào KingSMP (lâu lâu nó lỗi ko vào được là do server)
 
 ---
 

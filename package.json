@@ -1,0 +1,13 @@
+{
+  "name": "kingmc-afk-bot",
+  "version": "1.0.0",
+  "description": "AFK bot cho KingMC server",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "dependencies": {
+    "mineflayer": "^4.23.0",
+    "mineflayer-gui": "^1.0.0"
+  }
+}

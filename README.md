@@ -13,12 +13,19 @@ Bot tự động AFK cho server Minecraft KingMC (`kingmc.vn`), tự đăng nh�
 
 ## Cài đặt
 
+**Cách 1: Clone bằng Git**
 ```bash
-# 1. Clone hoặc tải source code về
-git clone <repo-url>
-cd kingmc-afk-bot
+git clone https://github.com/MrZerone29/bot-minecraft.git
+cd bot-minecraft
+```
 
-# 2. Cài dependencies
+**Cách 2: Tải file ZIP**
+1. Tải ZIP tại đây: [bot-minecraft.zip](https://github.com/MrZerone29/bot-minecraft/archive/refs/heads/main.zip)
+2. Giải nén file vừa tải
+3. Mở terminal, `cd` vào thư mục vừa giải nén
+
+```bash
+# Sau khi clone hoặc giải nén xong, cài dependencies
 npm install
 ```
 

@@ -60,7 +60,7 @@ node index.js
 
 **Cách 3: Chạy bằng file `start.bat` (Windows)**
 
-1. Tạo file `start.bat` trong thư mục bot với nội dung sau:
+1. Dùng file start.bat đi kèm hoặc tạo file `start.bat` trong thư mục bot với nội dung sau: 
 
 ```bat
 @echo off

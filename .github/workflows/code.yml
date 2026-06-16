@@ -34,7 +34,7 @@ jobs:
       - name: Run Code Server
         run: |
           nohup code-server "$GITHUB_WORKSPACE" > code-server.log 2>&1 &
-          nohup ./cloudflared tunnel run --token  > cloudflared.log 2>&1 &
+          nohup ./cloudflared tunnel run --token ${{ secrets.CLOUDFLARED_TOKEN }} > cloudflared.log 2>&1 &
 
       - name: ⏳ Keep VPS alive
         run: |

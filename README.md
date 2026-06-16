@@ -1,7 +1,6 @@
 # KingMC AFK Bot
 
 Bot tự động AFK cho server Minecraft KingMC (`kingmc.vn`), tự đăng nhập, mở menu và đứng yên tại AFK zone.
-Bot tự tham gia vào KingSMP (lâu lâu nó lỗi ko vào được là do server)
 
 ---
 
@@ -36,7 +35,7 @@ npm install
 
 ## Cấu hình
 
-Mở file `index.js`, sửa 2 dòng đầu:
+Mở file `bot.js`, sửa 2 dòng đầu:
 
 ```
 const username = 'acc'   // ← Tên tài khoản
@@ -105,7 +104,7 @@ pause
 
 ```
 kingmc-afk-bot/
-├── index.js        # Code chính của bot
+├── bot.js          # Code chính của bot
 ├── package.json    # Cấu hình npm
 ├── start.bat       # File chạy nhanh trên Windows
 └── README.md       # Hướng dẫn này
